@@ -1,1 +1,24 @@
+<div fxLayout="row" fxLayoutGap="8px">
+  <button mat-raised-button style="background: salmon" (click)="changePage('')">
+    Instruction
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="changePage('request-queue-number')"
+  >
+    Print Queue Number
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="changePage('input-visitor-details')"
+  >
+    Input Visitor Details
+  </button>
+  <button mat-raised-button color="warn" (click)="changePage('visitor-list')">
+    Visitor List
+  </button>
+</div>
+
 <router-outlet></router-outlet>
