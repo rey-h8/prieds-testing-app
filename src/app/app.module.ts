@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { WindowRef } from './services/window-ref.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     { provide: Window, useValue: window },
+    WindowRef,
   ],
   bootstrap: [AppComponent],
 })

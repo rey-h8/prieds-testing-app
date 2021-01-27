@@ -1,65 +1,72 @@
-<mat-card
-  fxLayout="column"
-  fxFlex="100"
-  fxFlex.gt-xs="80"
-  fxFlex.gt-sm="60"
-  style="padding: 3rem 1.5rem"
->
-  <h1 class="mat-display-1">Biodata Pengunjung</h1>
+<div style="padding: 2rem 1rem; background-color: rgb(228, 232, 245)">
+  <mat-card
+    fxLayout="column"
+    fxFlex="100"
+    fxFlex.gt-xs="80"
+    fxFlex.gt-sm="60"
+    style="padding: 3rem 1.5rem"
+  >
+    <h1 class="mat-display-1">Biodata Pengunjung</h1>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Nama</mat-label>
-    <input
-      matInput
-      placeholder="Nama pengunjung"
-      required
-      [(ngModel)]="user.nama"
-      name="nama"
-      id="nama"
-    />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Tanggal Lahir</mat-label>
-    <input
-      matInput
-      required
-      type="date"
-      [(ngModel)]="user.tanggal_lahir"
-      name="tanggal_lahir"
-      id="tanggal_lahir"
-    />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Jenis Kelamin</mat-label>
-    <mat-select
-      [(ngModel)]="user.jenis_kelamin"
-      name="jenis_kelamin"
-      id="jenis_kelamin"
-    >
-      <mat-option value="Laki-Laki">Laki-Laki</mat-option>
-      <mat-option value="Perempuan">Perempuan</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>NIK</mat-label>
-    <input
-      matInput
-      type="number"
-      placeholder="NIK pengunjung"
-      [(ngModel)]="user.nik"
-      name="nik"
-      id="nik"
-    />
-  </mat-form-field>
-  <div fxLayout="row" fxLayoutGap="8px">
-    <button reset mat-flat-button fxFlex="100">Reset</button>
+    <mat-form-field appearance="fill">
+      <mat-label>Nama</mat-label>
+      <input
+        matInput
+        placeholder="Nama pengunjung"
+        required
+        [(ngModel)]="user.nama"
+        name="nama"
+        id="nama"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Tanggal Lahir</mat-label>
+      <input
+        matInput
+        required
+        type="date"
+        [(ngModel)]="user.tanggal_lahir"
+        name="tanggal_lahir"
+        id="tanggal_lahir"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Jenis Kelamin</mat-label>
+      <mat-select
+        [(ngModel)]="user.jenis_kelamin"
+        name="jenis_kelamin"
+        id="jenis_kelamin"
+      >
+        <mat-option value="Laki-Laki">Laki-Laki</mat-option>
+        <mat-option value="Perempuan">Perempuan</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>NIK</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="NIK pengunjung"
+        [(ngModel)]="user.nik"
+        name="nik"
+        id="nik"
+      />
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="8px">
+      <button reset mat-flat-button fxFlex="100">Reset</button>
 
-    <button mat-raised-button color="primary" fxFlex="100" (click)="saveUser()">
-      Submit
-    </button>
-  </div>
+      <button
+        mat-raised-button
+        color="primary"
+        fxFlex="100"
+        (click)="saveUser()"
+      >
+        Submit
+      </button>
+    </div>
 
-  <div *ngIf="submitted">
-    <h4>Data submitted successfully</h4>
-  </div>
-</mat-card>
+    <div *ngIf="submitted">
+      <h4>Data submitted successfully</h4>
+    </div>
+  </mat-card>
+</div>

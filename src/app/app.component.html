@@ -1,40 +1,52 @@
-<mat-toolbar
-  style="height: min-content; padding: 1rem 2rem; background-color: white"
->
-  <div
-    fxLayout="column"
-    fxLayout.gt-xs="row"
-    fxLayoutGap="8px"
-    class="no-print"
+<ng-template #toolbar>
+  <mat-toolbar
+    style="height: min-content; padding: 1rem 2rem; background-color: white"
   >
-    <button
-      mat-raised-button
-      style="background: salmon"
-      (click)="changePage('')"
-      fxFlex.xs="100"
+    <div
+      fxLayout="column"
+      fxLayout.gt-xs="row"
+      fxLayoutGap="8px"
+      class="no-print"
     >
-      Instruction
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="changePage('request-queue-number')"
-    >
-      Print Queue Number
-    </button>
-    <button
-      mat-raised-button
-      color="accent"
-      (click)="changePage('input-visitor-details')"
-    >
-      Input Visitor Details
-    </button>
-    <button mat-raised-button color="warn" (click)="changePage('visitor-list')">
-      Visitor List
-    </button>
-  </div>
-</mat-toolbar>
+      <button
+        mat-raised-button
+        style="background: salmon"
+        (click)="changePage('')"
+        fxFlex.xs="100"
+      >
+        Instruction
+      </button>
+      <button
+        mat-raised-button
+        (click)="
+          open(
+            '/request-queue-number',
+            'Queue',
+            'height=500,width=500,scrollbars=no'
+          )
+        "
+        color="primary"
+      >
+        Print Queue Number
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="changePage('input-visitor-details')"
+      >
+        Input Visitor Details
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="changePage('visitor-list')"
+      >
+        Visitor List
+      </button>
+    </div>
+  </mat-toolbar>
+</ng-template>
 
-<div style="padding: 2rem 1rem; background-color: rgb(228, 232, 245)">
-  <router-outlet></router-outlet>
-</div>
+<div *ngIf="queue(); else toolbar"></div>
+
+<router-outlet></router-outlet>
