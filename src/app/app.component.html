@@ -1,5 +1,12 @@
-<mat-toolbar style="height: min-content; padding: 1rem 2rem">
-  <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxFill>
+<mat-toolbar
+  style="height: min-content; padding: 1rem 2rem; background-color: white"
+>
+  <div
+    fxLayout="column"
+    fxLayout.gt-xs="row"
+    fxLayoutGap="8px"
+    class="no-print"
+  >
     <button
       mat-raised-button
       style="background: salmon"
@@ -28,6 +35,6 @@
   </div>
 </mat-toolbar>
 
-<div style="padding: 2rem 1rem; background-color: aliceblue">
+<div style="padding: 2rem 1rem; background-color: rgb(228, 232, 245)">
   <router-outlet></router-outlet>
 </div>

@@ -31,7 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: Window, useValue: window },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
