@@ -1,24 +1,33 @@
-<div fxLayout="row" fxLayoutGap="8px">
-  <button mat-raised-button style="background: salmon" (click)="changePage('')">
-    Instruction
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="changePage('request-queue-number')"
-  >
-    Print Queue Number
-  </button>
-  <button
-    mat-raised-button
-    color="accent"
-    (click)="changePage('input-visitor-details')"
-  >
-    Input Visitor Details
-  </button>
-  <button mat-raised-button color="warn" (click)="changePage('visitor-list')">
-    Visitor List
-  </button>
-</div>
+<mat-toolbar style="height: min-content; padding: 1rem 2rem">
+  <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxFill>
+    <button
+      mat-raised-button
+      style="background: salmon"
+      (click)="changePage('')"
+      fxFlex.xs="100"
+    >
+      Instruction
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="changePage('request-queue-number')"
+    >
+      Print Queue Number
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="changePage('input-visitor-details')"
+    >
+      Input Visitor Details
+    </button>
+    <button mat-raised-button color="warn" (click)="changePage('visitor-list')">
+      Visitor List
+    </button>
+  </div>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<div style="padding: 2rem 1rem; background-color: aliceblue">
+  <router-outlet></router-outlet>
+</div>

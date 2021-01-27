@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
 export class InputVisitorDetailsComponent implements OnInit {
   user = {
     nama: '',
-    umur: '',
+    tanggal_lahir: '',
     jenis_kelamin: '',
     nik: '',
   };
@@ -20,18 +20,18 @@ export class InputVisitorDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   saveUser(): void {
-    const { nama, umur, jenis_kelamin, nik } = this.user;
+    const { nama, tanggal_lahir, jenis_kelamin, nik } = this.user;
 
     const data = {
       nama,
-      umur,
+      tanggal_lahir,
       jenis_kelamin,
       nik,
     };
 
     this.userService.create(data).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.submitted = true;
       },
       (error) => {
@@ -44,7 +44,7 @@ export class InputVisitorDetailsComponent implements OnInit {
     this.submitted = false;
     this.user = {
       nama: '',
-      umur: '',
+      tanggal_lahir: '',
       jenis_kelamin: '',
       nik: '',
     };
