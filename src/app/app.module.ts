@@ -33,11 +33,7 @@ import { WindowRef } from './services/window-ref.service';
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
-    { provide: Window, useValue: window },
-    WindowRef,
-  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, WindowRef],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

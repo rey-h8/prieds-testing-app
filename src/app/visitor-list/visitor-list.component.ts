@@ -29,7 +29,7 @@ export class VisitorListComponent implements OnInit {
     this.userService.getAll().subscribe(
       (data) => {
         this.users = data;
-        console.log(data);
+        // console.log(data);
       },
       (error) => {
         console.log(error);
